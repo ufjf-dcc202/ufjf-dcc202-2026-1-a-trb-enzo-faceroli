@@ -78,6 +78,14 @@ body {
     color: #ccc;
 }
 
+#lista-movimentos > li {
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 40%;
+}   
+
 h3 {
     padding-bottom: 10px;
 }

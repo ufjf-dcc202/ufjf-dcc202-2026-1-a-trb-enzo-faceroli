@@ -1,8 +1,9 @@
 const torres = document.querySelectorAll('.torre');
-const listaMovimentos = document.getElementById('#lista-movimentos')
+const listaMovimentos = document.getElementById('lista-movimentos')
 
 let torreSelecionada = null;
 let blocoSelecionado = null;
+let totalMovimentos = 0;
 
 torres.forEach(torre => { 
     torre.addEventListener('click', function() {
@@ -32,7 +33,7 @@ torres.forEach(torre => {
             // se já tiver uma jogada acontecendo, a torre clicada na verdade é o destino
             const torreFinal = this;
 
-            moverBloco(torreSelecionada, torreFinal);
+            moverBloco(torreSelecionada, torreFinal, listaMovimentos);
 
             // PARTE FEITA COM AJUDA DE IA (Google Gemini)
             blocoSelecionado.style.transition = 'none';
@@ -44,14 +45,14 @@ torres.forEach(torre => {
                 blocoSelecionado.classList.remove('subindo');
                 blocoSelecionado = null;
 
-                torreSelecionada.classList.remove('subindo');
+                torreSelecionada.classList.remove('selecionada');
                 torreSelecionada = null;
             }, 50)   
         }
     })
 })
 
-function moverBloco(torreInicial, torreFinal) {
+function moverBloco(torreInicial, torreFinal, listaMovimentos) {
     blocoSelecionado = torreInicial.firstElementChild;
     blocoTorreFinal = torreFinal.firstElementChild;
 
@@ -63,6 +64,28 @@ function moverBloco(torreInicial, torreFinal) {
 
     if(movimentoValido) {
         torreFinal.prepend(blocoSelecionado);
+        totalMovimentos++;
+
+        const numBloco = blocoSelecionado.innerText
+        const numInicial = torreInicial.id.replace('torre', '');
+        const numFinal = torreFinal.id.replace('torre', '');
+
+        const itemLista = document.createElement("li")
+
+        const numeroMovimento = document.createElement("div")
+        numeroMovimento.innerText = `${totalMovimentos}:`
+
+        const movimento = document.createElement("div")
+        movimento.innerText = `${numInicial} -> ${numFinal}`
+
+        itemLista.appendChild(numeroMovimento)
+        itemLista.appendChild(movimento)
+
+        listaMovimentos.appendChild(itemLista)
+        // Ajuda de IA para barra scrollar para baixo automaticamente
+        historico = document.getElementById('historico-movimentos')
+        historico.scrollTop = historico.scrollHeight;
+
     } else {
         console.log("Movimento inválido");
     }

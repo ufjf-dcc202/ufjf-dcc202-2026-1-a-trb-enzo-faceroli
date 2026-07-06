@@ -5,6 +5,7 @@ let blocoSelecionado = null;
 
 torres.forEach(torre => { 
     torre.addEventListener('click', function() {
+        // essa parte é sobre o cancelamento de uma jogada (clicar duas vezes na mesma torre)
         if (torreSelecionada === this) {
             blocoSelecionado.classList.remove('subindo');
             blocoSelecionado = null;
@@ -14,6 +15,8 @@ torres.forEach(torre => {
             return;
         }
 
+        // aqui checa se uma jogada ainda não foi iniciada
+        // depois ve se tem um bloco na torre selecionada
         if (torreSelecionada === null) {
             if (this.firstElementChild !== null) {
                 this.classList.add('selecionada')
@@ -25,6 +28,7 @@ torres.forEach(torre => {
                 blocoSelecionado.classList.add('subindo')
             }
         } else {
+            // se já tiver uma jogada acontecendo, a torre clicada na verdade é o destino
             const torreFinal = this;
 
             moverBloco(torreSelecionada, torreFinal);
@@ -55,11 +59,11 @@ function moverBloco(torreInicial, torreFinal) {
     // se tiver e a torre final estiver vazia, então prossegue com o movimento
     // se tiver e a torre final não estiver vazia, faz a checagem se o bloco é menor que o ultimo 
     // bloco da torre vazia
-    movimentoValido = blocoSelecionado != null && (blocoTorreFinal === null || (Number(blocoSelecionado.innerText) < Number(blocoTorreFinal.innerText)))
+    movimentoValido = blocoTorreFinal === null || (Number(blocoSelecionado.innerText) < Number(blocoTorreFinal.innerText));
 
     if(movimentoValido) {
-        torreFinal.prepend(blocoSelecionado)
+        torreFinal.prepend(blocoSelecionado);
     } else {
-        console.log("Movimento inválido")
+        console.log("Movimento inválido");
     }
 }

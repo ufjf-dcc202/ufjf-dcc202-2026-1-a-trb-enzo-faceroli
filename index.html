@@ -9,33 +9,44 @@
     <title>Torre de Hanoi</title>
 </head>
 <body>
-    <div id="historico-movimentos">
-        <h3>Histórico</h3>
-        <ol id="lista-movimentos">
-        </ol>
-    </div>
-
     <h1>Torre de Hanoi</h1>
+
     <div class="main">
-        <div class="conjunto-torres">
-            <div class="torre", id="torre1">
-                <div class="bloco", id="bloco1">1</div>
-                <div class="bloco", id="bloco2">2</div>
-                <div class="bloco", id="bloco3">3</div>
-                <div class="bloco", id="bloco4">4</div>
-                <div class="bloco", id="bloco5">5</div>
-                <div class="bloco", id="bloco6">6</div>
-                <div class="bloco", id="bloco7">7</div>
-                <div class="bloco", id="bloco8">8</div>
+        <div class="tela-inicial">
+            <div class="container-instrucoes">
+                <h2>Instruções</h2>
+                <ul class="lista-instrucoes">
+                    <li class="instrucao">Utilize o mouse para clicar em uma torre e retirar o bloco do topo dela.</li>
+                    <li class="instrucao">Clique na torre para qual você quer mover o bloco.</li>
+                    <li class="instrucao">O objetivo é mover todos os blocos para a terceira torre.</li>
+                </ul>
             </div>
-
-            <div class="torre", id="torre2">
-            </div>
-
-            <div class="torre", id="torre3"></div>
+            <button id="btn-jogar">Jogar!</button>
         </div>
-
-        <div class="mesa"></div>
+        <div class="tela-jogo">
+            <div id="historico-movimentos">
+                <h3>Histórico</h3>
+                <ol id="lista-movimentos">
+                </ol>
+            </div>
+        
+            <div class="conjunto-torres">
+                <div class="torre", id="torre1">
+                    <div class="bloco", id="bloco1">1</div>
+                    <div class="bloco", id="bloco2">2</div>
+                    <div class="bloco", id="bloco3">3</div>
+                    <div class="bloco", id="bloco4">4</div>
+                    <div class="bloco", id="bloco5">5</div>
+                    <div class="bloco", id="bloco6">6</div>
+                    <div class="bloco", id="bloco7">7</div>
+                    <div class="bloco", id="bloco8">8</div>
+                </div>
+                <div class="torre", id="torre2">
+                </div>
+                <div class="torre", id="torre3"></div>
+            </div>
+            <div class="mesa"></div>
+        </div>
     </div>
 </body>
 </html>

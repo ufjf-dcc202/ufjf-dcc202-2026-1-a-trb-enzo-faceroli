@@ -48,9 +48,20 @@ torres.forEach(torre => {
                 torreSelecionada.classList.remove('selecionada');
                 torreSelecionada = null;
             }, 50)   
+
+            confereVitoria();
         }
     })
 })
+
+function confereVitoria() {
+    const torreAlvo = torres[2];
+    if (torreAlvo.children.length != 8) {
+        return false;
+    } else {
+        return true;
+    }   
+}   
 
 function moverBloco(torreInicial, torreFinal, listaMovimentos) {
     blocoSelecionado = torreInicial.firstElementChild;

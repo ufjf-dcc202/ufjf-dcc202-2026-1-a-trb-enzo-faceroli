@@ -1,8 +1,24 @@
+const numBlocos = 8
+const torre1 = document.getElementById('torre1')
 const botaoJogar = document.getElementById('btn-jogar')
+const botaoJogarNovamente = document.getElementById('btn-jogar-novamente')
 const telaInicial = document.getElementById('tela-inicial')
 const telaJogo = document.getElementById('tela-jogo')
+const telaFinal = document.getElementById('tela-final')
+
+botaoJogarNovamente.onclick = function() {
+    location.reload()
+}
 
 botaoJogar.onclick = function() {
+    for (let i = numBlocos; i > 0; i--) {
+        const bloco = document.createElement('div');
+        bloco.classList.add('bloco');
+        bloco.id = `bloco${i}`;
+        bloco.innerText = i;
+        torre1.prepend(bloco);
+    }
+
     telaInicial.style.display = 'none';
     telaJogo.style.display = 'flex';
 }
@@ -65,11 +81,11 @@ torres.forEach(torre => {
 
 function confereVitoria() {
     const torreAlvo = torres[2];
-    if (torreAlvo.children.length != 8) {
+    if (torreAlvo.children.length != numBlocos) {
         const a = 0;
     } else {
         telaJogo.style.display = 'none';
-        telaInicial.style.display = 'flex';
+        telaFinal.style.display = 'flex';
     }   
 }   
 

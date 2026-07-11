@@ -111,7 +111,6 @@ h1 {
 }
 
 #tela-inicial {
-    /* display: none; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,7 +143,28 @@ h1 {
     justify-content: space-around;
 }
 
-#btn-jogar {
+/* tela final */
+#tela-final {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.container-venceu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.container-venceu > h2 {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#btn-jogar, #btn-jogar-novamente {
     padding: 10px 30px;
     border-radius: 12px;
     font-weight: bold;
@@ -265,3 +285,5 @@ h1 {
     background-color: blueviolet;
     width: 220px;
 }
+
+

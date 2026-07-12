@@ -1,4 +1,4 @@
-const numBlocos = 4;
+const numBlocos = 8;
 const torre1 = document.getElementById("torre1");
 const botaoJogar = document.getElementById("btn-jogar");
 const botaoJogarNovamente = document.getElementById("btn-jogar-novamente");

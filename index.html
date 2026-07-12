@@ -1,52 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="images/icon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/icon.png" />
     <script src="scripts.js" defer></script>
     <title>Torre de Hanoi</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Torre de Hanoi</h1>
 
     <div class="main">
-        <div id="tela-inicial">
-            <div class="container-instrucoes">
-                <h2>Instruções</h2>
-                <ul class="lista-instrucoes">
-                    <li class="instrucao">Utilize o mouse para clicar em uma torre e retirar o bloco do topo dela.</li>
-                    <li class="instrucao">Clique na torre para qual você quer mover o bloco.</li>
-                    <li class="instrucao">O objetivo é mover todos os blocos para a terceira torre.</li>
-                </ul>
-            </div>
-            <button id="btn-jogar">Jogar!</button>
+      <div id="tela-inicial">
+        <div class="container-instrucoes">
+          <h2>Instruções</h2>
+          <ul class="lista-instrucoes">
+            <li class="instrucao">
+              Utilize o mouse para clicar em uma torre e retirar o bloco do topo
+              dela.
+            </li>
+            <li class="instrucao">
+              Clique na torre para qual você quer mover o bloco.
+            </li>
+            <li class="instrucao">
+              O objetivo é mover todos os blocos para a terceira torre.
+            </li>
+          </ul>
+        </div>
+        <button id="btn-jogar">Jogar!</button>
+      </div>
+
+      <div id="tela-jogo">
+        <div id="historico-movimentos">
+          <h3>Histórico</h3>
+          <ol id="lista-movimentos"></ol>
         </div>
 
-        <div id="tela-jogo">
-            <div id="historico-movimentos">
-                <h3>Histórico</h3>
-                <ol id="lista-movimentos">
-                </ol>
-            </div>
-        
-            <div class="conjunto-torres">
-                <div class="torre", id="torre1">
-                </div>
-                <div class="torre", id="torre2">
-                </div>
-                <div class="torre", id="torre3"></div>
-            </div>
-            <div class="mesa"></div>
+        <div class="conjunto-torres">
+          <div class="torre" , id="torre1"></div>
+          <div class="torre" , id="torre2"></div>
+          <div class="torre" , id="torre3"></div>
         </div>
+        <div class="mesa"></div>
+      </div>
 
-        <div id="tela-final">
-            <div class="container-venceu">
-                <h2>Parabéns, você venceu</h2>
-                <button id="btn-jogar-novamente">Jogar Novamente</button>
-            </div>
+      <div id="tela-final">
+        <div class="container-venceu">
+          <h2>Parabéns, você venceu</h2>
+          <button id="btn-jogar-novamente">Jogar Novamente</button>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
